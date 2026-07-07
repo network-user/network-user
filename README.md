@@ -37,7 +37,7 @@
 <h3 align="center">Статистика · Stats</h3>
 
 <div align="center">
-<img src="./assets/metrics.svg" alt="metrics" width="82%" />
+<img src="./assets/stats.svg" alt="stats" width="90%" />
 </div>
 
 <div align="center">

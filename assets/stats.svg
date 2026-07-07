@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="880" height="200" font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="stats pending">
+  <rect x="8" y="8" width="864" height="184" rx="14" fill="#131418" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+  <text x="440" y="95" text-anchor="middle" font-size="20" font-weight="700" fill="#f3f3f1">статистика · stats</text>
+  <text x="440" y="128" text-anchor="middle" font-size="14" fill="#a6a7ab">появится после первого запуска workflow «Stats»</text>
+</svg>

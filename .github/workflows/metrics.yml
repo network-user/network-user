@@ -1,4 +1,4 @@
-name: Metrics
+name: Stats
 
 on:
   schedule:
@@ -9,43 +9,22 @@ permissions:
   contents: write
 
 jobs:
-  github-metrics:
+  stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate metrics
-        uses: lowlighter/metrics@latest
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          # ВАЖНО: classic-токен БЕЗ scope `repo` (только read:user).
-          # Так метрики не видят приватные репозитории и ничего приватного
-          # не попадает в SVG (ни счётчик, ни языки, ни коммиты).
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: network-user
-
-          filename: assets/metrics.svg
-          template: classic
-          config_timezone: Europe/Moscow
-          config_animations: no
-          config_padding: 6%
-
-          # Только 4 блока и строго в этом порядке:
-          # 1) шапка (имя + joined GitHub), 2) активность, 3) языки, 4) календарь.
-          base: header, activity
-          config_order: base.header, base.activity, languages, calendar
-
-          # Языки — оставляем родные цвета GitHub (единственный цветной блок).
-          plugin_languages: yes
-          plugin_languages_limit: 8
-          plugin_languages_details: percentage
-
-          # Контрибуции — 2D тепловой календарь за год.
-          plugin_calendar: yes
-          plugin_calendar_limit: 1
-
-          # Монохром ТОЧЕЧНО: обесцвечиваем только аватар и календарь.
-          # Языки (.language) не трогаем — остаются цветными.
-          extras_css: |
-            .background, rect.background { fill: #0c0d0f !important; }
-            body { color: #a6a7ab; }
-            h2, .title, .name { color: #f3f3f1 !important; fill: #f3f3f1 !important; }
-            .avatar { filter: grayscale(1); }
-            .calendar, .isocalendar { filter: grayscale(1); }
+          python-version: "3.12"
+      - name: Generate stats SVG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: network-user
+        run: python scripts/gen_stats.py
+      - name: Commit updated SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg
+          git diff --quiet --cached || git commit -m "chore(stats): update stats card [skip ci]"
+          git push
