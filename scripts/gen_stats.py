@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Custom monochrome GitHub stats card generator.
 
-Считает по ПУБЛИЧНЫМ репозиториям пользователя:
-  - общее число коммитов (за всё время, default-ветки);
-  - строки кода (суммарные additions автора);
+Считает по ПУБЛИЧНЫМ репозиториям пользователя (owner, не форки):
+  - общее число коммитов (за всё время, все авторы — обходит проблему
+    атрибуции, когда коммиты сделаны под разными identity);
+  - строки кода (сумма additions);
   - коммиты за последние 30 дней;
 плюс топ-языки (единственный цветной блок) и 2D тепловой календарь.
-Токен - встроенный GITHUB_TOKEN (только публичные данные, ничего приватного).
+Токен - встроенный GITHUB_TOKEN (только публичные данные).
+
+Режим подсчёта: GH_COUNT=all (по умолчанию) — все коммиты в репо;
+GH_COUNT=user — только коммиты, атрибутированные GH_USER.
 """
 import os
 import sys
@@ -19,6 +23,7 @@ from datetime import datetime, timezone, timedelta
 TOKEN = os.environ.get("GH_TOKEN")
 USER = os.environ.get("GH_USER", "network-user")
 OUT = os.environ.get("GH_OUT", "assets/stats.svg")
+COUNT_MODE = os.environ.get("GH_COUNT", "all").lower()
 if not TOKEN:
     print("GH_TOKEN is missing", file=sys.stderr)
     sys.exit(1)
@@ -30,7 +35,6 @@ HEADERS = {
     "User-Agent": "custom-stats-generator",
 }
 
-# Цвета языков (GitHub linguist). Только этот блок остаётся цветным.
 LANG_COLORS = {
     "Python": "#3572A5", "TypeScript": "#3178c6", "JavaScript": "#f1e05a",
     "HTML": "#e34c26", "CSS": "#563d7c", "SCSS": "#c6538c", "Shell": "#89e051",
@@ -38,7 +42,7 @@ LANG_COLORS = {
     "C++": "#f34b7d", "Java": "#b07219", "Kotlin": "#A97BFF", "Ruby": "#701516",
     "PHP": "#4F5D95", "Vue": "#41b883", "Astro": "#ff5a03", "Svelte": "#ff3e00",
     "Jupyter Notebook": "#DA5B0B", "Makefile": "#427819", "PowerShell": "#012456",
-    "Shell Script": "#89e051", "Mako": "#7e858d", "Shader": "#6d8086",
+    "Mako": "#7e858d", "Batchfile": "#C1F12E", "Procfile": "#7d8088",
 }
 LANG_FALLBACK = "#7d8088"
 
@@ -49,14 +53,13 @@ def _open(url, method="GET", data=None):
     return urllib.request.urlopen(req, timeout=60)
 
 
-def rest_get(path, retries=8):
+def rest_get(path, retries=10):
     url = REST + path
     for _ in range(retries):
         try:
             r = _open(url)
-            code = r.getcode()
             raw = r.read()
-            if code == 202:            # статистика ещё считается
+            if r.getcode() == 202:
                 time.sleep(3)
                 continue
             return json.loads(raw) if raw else None
@@ -64,12 +67,13 @@ def rest_get(path, retries=8):
             if e.code == 202:
                 time.sleep(3)
                 continue
-            if e.code in (403, 429):   # rate limit
+            if e.code in (403, 429):
                 time.sleep(6)
                 continue
-            if e.code == 404:
+            if e.code in (404, 204):
                 return None
-            raise
+            print("REST %s -> HTTP %d" % (path, e.code), file=sys.stderr)
+            return None
     return None
 
 
@@ -95,17 +99,18 @@ def list_public_repos():
     return repos
 
 
-def repo_author_stats(owner, name):
-    """Возвращает (commits_all_time, additions, commits_last_30d) для USER."""
+def repo_stats(owner, name):
+    """(commits_all_time, additions, commits_last_30d) по репозиторию."""
     data = rest_get("/repos/%s/%s/stats/contributors" % (owner, name))
-    if not data:
+    if not isinstance(data, list):
         return 0, 0, 0
     cutoff = int((datetime.now(timezone.utc) - timedelta(days=30)).timestamp())
     commits = adds = recent = 0
     for c in data:
-        author = c.get("author") or {}
-        if (author.get("login") or "").lower() != USER.lower():
-            continue
+        if COUNT_MODE == "user":
+            login = (c.get("author") or {}).get("login") or ""
+            if login.lower() != USER.lower():
+                continue
         for w in c.get("weeks", []):
             commits += w.get("c", 0)
             adds += w.get("a", 0)
@@ -115,7 +120,8 @@ def repo_author_stats(owner, name):
 
 
 def repo_languages(owner, name):
-    return rest_get("/repos/%s/%s/languages" % (owner, name)) or {}
+    d = rest_get("/repos/%s/%s/languages" % (owner, name))
+    return d if isinstance(d, dict) else {}
 
 
 CAL_QUERY = ("query($login:String!){user(login:$login){contributionsCollection{"
@@ -123,8 +129,18 @@ CAL_QUERY = ("query($login:String!){user(login:$login){contributionsCollection{"
 
 
 def calendar_grid():
-    res = gql(CAL_QUERY, {"login": USER})
-    weeks = res["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+    """2D-сетка контрибуций; при любой ошибке GraphQL — пустой список (не падаем)."""
+    try:
+        res = gql(CAL_QUERY, {"login": USER})
+        user = (res.get("data") or {}).get("user")
+        if not user:
+            print("calendar: GraphQL returned no user (%s)" % json.dumps(res.get("errors"))[:200],
+                  file=sys.stderr)
+            return []
+        weeks = user["contributionsCollection"]["contributionCalendar"]["weeks"]
+    except Exception as e:  # noqa: BLE001
+        print("calendar: failed (%s)" % e, file=sys.stderr)
+        return []
     grid = []
     for w in weeks:
         col = [0] * 7
@@ -143,7 +159,7 @@ def human(n):
 
 
 def esc(s):
-    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 # ------------------------- сбор данных -------------------------
@@ -151,7 +167,7 @@ repos = list_public_repos()
 total_commits = total_loc = last30 = 0
 lang_bytes = {}
 for owner, name in repos:
-    c, a, r = repo_author_stats(owner, name)
+    c, a, r = repo_stats(owner, name)
     total_commits += c
     total_loc += a
     last30 += r
@@ -162,18 +178,13 @@ grid = calendar_grid()
 langs = sorted(lang_bytes.items(), key=lambda x: -x[1])[:6]
 lang_sum = sum(b for _, b in langs) or 1
 
-print("repos=%d commits=%d loc=%d last30=%d langs=%d"
-      % (len(repos), total_commits, total_loc, last30, len(langs)), file=sys.stderr)
+print("MODE=%s repos=%d commits=%d loc=%d last30=%d langs=%d calendar_weeks=%d"
+      % (COUNT_MODE, len(repos), total_commits, total_loc, last30, len(langs), len(grid)),
+      file=sys.stderr)
 
 # ------------------------- отрисовка SVG -------------------------
-W = 880
-H = 340
-BG = "#131418"
-TXT = "#f3f3f1"
-MUT = "#a6a7ab"
-FAINT = "#6b6d73"
-
-# календарь
+W, H = 880, 340
+BG, TXT, MUT = "#131418", "#f3f3f1", "#a6a7ab"
 CELL, GAP = 8, 2
 STEP = CELL + GAP
 cx0, cy0 = 28, 96
@@ -196,28 +207,27 @@ def cell_color(v):
 
 
 parts = []
-parts.append(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
-    'font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="GitHub stats">' % (W, H, W, H))
+parts.append('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
+             'font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="GitHub stats">'
+             % (W, H, W, H))
 parts.append('<rect x="8" y="8" width="%d" height="%d" rx="14" fill="%s" stroke="#ffffff" '
              'stroke-opacity="0.10" stroke-width="1.5"/>' % (W - 16, H - 16, BG))
 parts.append('<text x="28" y="48" font-size="20" font-weight="700" fill="%s">статистика · stats</text>' % TXT)
 
-# --- левый блок: календарь ---
-parts.append('<text x="28" y="80" font-size="13" fill="%s">контрибуции за год · contributions</text>' % MUT)
-for wi, col in enumerate(grid):
-    for d, v in enumerate(col):
-        x = cx0 + wi * STEP
-        y = cy0 + d * STEP
-        parts.append('<rect x="%d" y="%d" width="%d" height="%d" rx="2" fill="%s"/>'
-                     % (x, y, CELL, CELL, cell_color(v)))
+if cols:
+    parts.append('<text x="28" y="80" font-size="13" fill="%s">контрибуции за год · contributions</text>' % MUT)
+    for wi, col in enumerate(grid):
+        for d, v in enumerate(col):
+            parts.append('<rect x="%d" y="%d" width="%d" height="%d" rx="2" fill="%s"/>'
+                         % (cx0 + wi * STEP, cy0 + d * STEP, CELL, CELL, cell_color(v)))
+    sx = cx0 + cols * STEP + 40
+else:
+    sx = cx0
 
-# --- правый блок: активность (числа) в один ряд с календарём ---
-sx = cx0 + cols * STEP + 40
 stats = [
-    (str("{:,}".format(total_commits)), "коммитов всего · commits (public)"),
+    ("{:,}".format(total_commits), "коммитов всего · commits (all public repos)"),
     (human(total_loc), "строк кода · lines of code"),
-    (str("{:,}".format(last30)), "коммитов за 30 дней · last 30 days"),
+    ("{:,}".format(last30), "коммитов за 30 дней · last 30 days"),
 ]
 sy = 104
 for num, label in stats:
@@ -227,31 +237,26 @@ for num, label in stats:
                  % (sx, sy + 22, MUT, esc(label)))
     sy += 70
 
-# --- языки (единственный цветной блок) ---
 ly = 262
 parts.append('<text x="28" y="%d" font-size="13" fill="%s">языки · most used languages</text>' % (ly, MUT))
 bar_x, bar_w, bar_y, bar_h = 28, W - 56, ly + 12, 14
-xoff = bar_x
 parts.append('<clipPath id="lc"><rect x="%d" y="%d" width="%d" height="%d" rx="7"/></clipPath>'
              % (bar_x, bar_y, bar_w, bar_h))
 parts.append('<g clip-path="url(#lc)">')
+xoff = bar_x
 for lang, b in langs:
     seg = bar_w * (b / lang_sum)
-    color = LANG_COLORS.get(lang, LANG_FALLBACK)
     parts.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s"/>'
-                 % (xoff, bar_y, seg + 0.6, bar_h, color))
+                 % (xoff, bar_y, seg + 0.6, bar_h, LANG_COLORS.get(lang, LANG_FALLBACK)))
     xoff += seg
 parts.append('</g>')
 
-# легенда
 lx, lyy = 28, bar_y + 40
 for lang, b in langs:
-    pct = 100.0 * b / lang_sum
-    color = LANG_COLORS.get(lang, LANG_FALLBACK)
-    label = "%s %.1f%%" % (lang, pct)
-    parts.append('<circle cx="%d" cy="%d" r="6" fill="%s"/>' % (lx + 6, lyy - 4, color))
-    parts.append('<text x="%d" y="%d" font-size="13" fill="%s">%s</text>'
-                 % (lx + 18, lyy, MUT, esc(label)))
+    label = "%s %.1f%%" % (lang, 100.0 * b / lang_sum)
+    parts.append('<circle cx="%d" cy="%d" r="6" fill="%s"/>'
+                 % (lx + 6, lyy - 4, LANG_COLORS.get(lang, LANG_FALLBACK)))
+    parts.append('<text x="%d" y="%d" font-size="13" fill="%s">%s</text>' % (lx + 18, lyy, MUT, esc(label)))
     lx += 20 + 10 * len(label)
 
 parts.append('</svg>')
