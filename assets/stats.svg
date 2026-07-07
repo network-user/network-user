@@ -33,7 +33,7 @@
 <rect x="68" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="68" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="68" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="68" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="68" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="68" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="68" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="68" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -194,7 +194,7 @@
 <rect x="298" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="298" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="298" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="298" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="298" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="298" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="298" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="298" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -207,10 +207,10 @@
 <rect x="308" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="318" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="318" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="318" y="116" width="8" height="8" rx="2" fill="#3a3f49"/>
-<rect x="318" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="318" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
+<rect x="318" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="318" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="318" y="146" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="318" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="318" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="328" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="328" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -228,7 +228,7 @@
 <rect x="338" y="156" width="8" height="8" rx="2" fill="#3a3f49"/>
 <rect x="348" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="348" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="348" y="116" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="348" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="348" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
 <rect x="348" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="348" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -251,16 +251,16 @@
 <rect x="378" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="378" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="378" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="378" y="136" width="8" height="8" rx="2" fill="#9aa0ab"/>
-<rect x="378" y="146" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="378" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
+<rect x="378" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="378" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="388" y="96" width="8" height="8" rx="2" fill="#3a3f49"/>
 <rect x="388" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="388" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="388" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
-<rect x="388" y="136" width="8" height="8" rx="2" fill="#5c626e"/>
-<rect x="388" y="146" width="8" height="8" rx="2" fill="#5c626e"/>
-<rect x="388" y="156" width="8" height="8" rx="2" fill="#5c626e"/>
+<rect x="388" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
+<rect x="388" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
+<rect x="388" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
+<rect x="388" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="398" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="398" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="398" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -282,7 +282,7 @@
 <rect x="418" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="418" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="418" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="428" y="96" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="428" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="428" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="428" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="428" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -292,7 +292,7 @@
 <rect x="438" y="96" width="8" height="8" rx="2" fill="#3a3f49"/>
 <rect x="438" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="438" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="438" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="438" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="438" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="438" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="438" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -301,15 +301,15 @@
 <rect x="448" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="448" y="126" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="448" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
-<rect x="448" y="146" width="8" height="8" rx="2" fill="#3a3f49"/>
+<rect x="448" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="448" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="458" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="458" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="458" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="458" y="126" width="8" height="8" rx="2" fill="#3a3f49"/>
-<rect x="458" y="136" width="8" height="8" rx="2" fill="#5c626e"/>
-<rect x="458" y="146" width="8" height="8" rx="2" fill="#5c626e"/>
-<rect x="458" y="156" width="8" height="8" rx="2" fill="#f3f3f1"/>
+<rect x="458" y="136" width="8" height="8" rx="2" fill="#9aa0ab"/>
+<rect x="458" y="146" width="8" height="8" rx="2" fill="#9aa0ab"/>
+<rect x="458" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="468" y="96" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="468" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="468" y="116" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -355,7 +355,7 @@
 <rect x="528" y="96" width="8" height="8" rx="2" fill="#f3f3f1"/>
 <rect x="528" y="106" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="528" y="116" width="8" height="8" rx="2" fill="#5c626e"/>
-<rect x="528" y="126" width="8" height="8" rx="2" fill="#5c626e"/>
+<rect x="528" y="126" width="8" height="8" rx="2" fill="#9aa0ab"/>
 <rect x="528" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="528" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="528" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
@@ -373,17 +373,17 @@
 <rect x="548" y="136" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="548" y="146" width="8" height="8" rx="2" fill="#1b1d24"/>
 <rect x="548" y="156" width="8" height="8" rx="2" fill="#1b1d24"/>
-<text x="598" y="104" font-size="34" font-weight="800" fill="#f3f3f1">19</text>
-<text x="598" y="126" font-size="13" fill="#a6a7ab">коммитов всего · commits (public)</text>
-<text x="598" y="174" font-size="34" font-weight="800" fill="#f3f3f1">1.2k</text>
+<text x="598" y="104" font-size="34" font-weight="800" fill="#f3f3f1">210</text>
+<text x="598" y="126" font-size="13" fill="#a6a7ab">коммитов всего · commits (all public repos)</text>
+<text x="598" y="174" font-size="34" font-weight="800" fill="#f3f3f1">133.8k</text>
 <text x="598" y="196" font-size="13" fill="#a6a7ab">строк кода · lines of code</text>
-<text x="598" y="244" font-size="34" font-weight="800" fill="#f3f3f1">0</text>
+<text x="598" y="244" font-size="34" font-weight="800" fill="#f3f3f1">2</text>
 <text x="598" y="266" font-size="13" fill="#a6a7ab">коммитов за 30 дней · last 30 days</text>
 <text x="28" y="262" font-size="13" fill="#a6a7ab">языки · most used languages</text>
 <clipPath id="lc"><rect x="28" y="274" width="824" height="14" rx="7"/></clipPath>
 <g clip-path="url(#lc)">
 <rect x="28.0" y="274" width="297.4" height="14" fill="#7d8088"/>
-<rect x="324.8" y="274" width="256.7" height="14" fill="#3572A5"/>
+<rect x="324.8" y="274" width="256.8" height="14" fill="#3572A5"/>
 <rect x="580.9" y="274" width="199.7" height="14" fill="#3178c6"/>
 <rect x="780.0" y="274" width="35.7" height="14" fill="#ff5a03"/>
 <rect x="815.0" y="274" width="34.4" height="14" fill="#563d7c"/>
