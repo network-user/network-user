@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 276" width="1000" height="276" role="img" aria-label="Стек · Stack" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <title>Стек · Stack</title>
+  <desc>Monochrome graphite table: layer column and its stack, with grid lines.</desc>
+  <defs>
+    <linearGradient id="stbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14161a"/><stop offset="1" stop-color="#0f1013"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="984" height="260" rx="14" fill="url(#stbg)" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5"/>
+  <path d="M 8 56 H 992" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5"/>
+  <path d="M 8 109 H 992 M 8 162 H 992 M 8 215 H 992" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <path d="M 198 8 V 268" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1"/>
+  <g text-anchor="middle" fill="#f3f3f1">
+    <text x="103" y="39" font-size="22" font-weight="600">Слой</text>
+  </g>
+  <text x="222" y="39" font-size="22" font-weight="600" fill="#f3f3f1">Главное</text>
+  <g text-anchor="middle" fill="#f3f3f1" font-size="20" font-weight="700">
+    <text x="103" y="90">Backend</text>
+    <text x="103" y="143">AI / ML</text>
+    <text x="103" y="196">Данные</text>
+    <text x="103" y="249">Инфра</text>
+  </g>
+  <g fill="#a6a7ab" font-size="19">
+    <text x="222" y="90">Python · FastAPI · Django / DRF · SQLAlchemy · asyncio</text>
+    <text x="222" y="143">PyTorch · Whisper · Demucs · Claude Code · YOLO · n8n</text>
+    <text x="222" y="196">PostgreSQL · Redis · Elasticsearch · MinIO / S3</text>
+    <text x="222" y="249">Docker · GitHub Actions · Nginx · Cloudflare · Prometheus</text>
+  </g>
+</svg>
