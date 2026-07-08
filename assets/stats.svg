@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836 340" width="836" height="340" font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="GitHub stats">
 <rect x="8" y="8" width="820" height="324" rx="14" fill="#131418" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
-<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">993</text>
+<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">1,049</text>
 <text x="40" y="82" font-size="13" fill="#a6a7ab">коммитов всего · commits</text>
-<text x="292" y="60" font-size="34" font-weight="800" fill="#f3f3f1">~547.7k</text>
+<text x="292" y="60" font-size="34" font-weight="800" fill="#f3f3f1">~554.7k</text>
 <text x="292" y="82" font-size="13" fill="#a6a7ab">строк кода · lines of code</text>
-<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">196</text>
+<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">205</text>
 <text x="544" y="82" font-size="13" fill="#a6a7ab">за 30 дней · last 30 days</text>
-<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 974 commits this year</text>
+<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 1030 commits this year</text>
 <text x="74" y="142" font-size="12" fill="#6b6d73">Jul</text>
 <text x="130" y="142" font-size="12" fill="#6b6d73">Aug</text>
 <text x="200" y="142" font-size="12" fill="#6b6d73">Sep</text>
@@ -317,8 +317,8 @@
 <rect x="648" y="206" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="648" y="220" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="648" y="234" width="11" height="11" rx="2" fill="#5c6673"/>
-<rect x="662" y="150" width="11" height="11" rx="2" fill="#39414c"/>
-<rect x="662" y="164" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="662" y="150" width="11" height="11" rx="2" fill="#5c6673"/>
+<rect x="662" y="164" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="662" y="178" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="662" y="192" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="662" y="206" width="11" height="11" rx="2" fill="#39414c"/>
@@ -330,11 +330,11 @@
 <rect x="676" y="192" width="11" height="11" rx="2" fill="#f3f3f1"/>
 <rect x="676" y="206" width="11" height="11" rx="2" fill="#f3f3f1"/>
 <rect x="676" y="220" width="11" height="11" rx="2" fill="#98a1ad"/>
-<rect x="676" y="234" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="676" y="234" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="690" y="150" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="690" y="164" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="690" y="178" width="11" height="11" rx="2" fill="#5c6673"/>
-<rect x="690" y="192" width="11" height="11" rx="2" fill="#5c6673"/>
+<rect x="690" y="192" width="11" height="11" rx="2" fill="#98a1ad"/>
 <rect x="690" y="206" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="690" y="220" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="690" y="234" width="11" height="11" rx="2" fill="#98a1ad"/>
@@ -347,7 +347,7 @@
 <rect x="704" y="234" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="718" y="150" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="718" y="164" width="11" height="11" rx="2" fill="#1b1d24"/>
-<rect x="718" y="178" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="718" y="178" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="718" y="192" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="718" y="206" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="718" y="220" width="11" height="11" rx="2" fill="#1b1d24"/>
@@ -390,28 +390,28 @@
 <rect x="802" y="150" width="11" height="11" rx="2" fill="#1b1d24"/>
 <rect x="802" y="164" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="802" y="178" width="11" height="11" rx="2" fill="#39414c"/>
-<rect x="802" y="192" width="11" height="11" rx="2" fill="#1b1d24"/>
+<rect x="802" y="192" width="11" height="11" rx="2" fill="#39414c"/>
 <text x="40" y="272" font-size="13" fill="#a6a7ab">языки · most used languages</text>
 <clipPath id="lc"><rect x="40" y="284" width="756" height="14" rx="7"/></clipPath>
 <g clip-path="url(#lc)">
-<rect x="40.0" y="284" width="270.8" height="14" fill="#7d8088"/>
-<rect x="310.2" y="284" width="233.9" height="14" fill="#3572A5"/>
-<rect x="543.5" y="284" width="181.9" height="14" fill="#3178c6"/>
-<rect x="724.8" y="284" width="32.5" height="14" fill="#ff5a03"/>
-<rect x="756.7" y="284" width="31.4" height="14" fill="#563d7c"/>
-<rect x="787.6" y="284" width="3.5" height="14" fill="#89e051"/>
+<rect x="40.0" y="284" width="267.4" height="14" fill="#7d8088"/>
+<rect x="306.8" y="284" width="240.5" height="14" fill="#3572A5"/>
+<rect x="546.7" y="284" width="179.6" height="14" fill="#3178c6"/>
+<rect x="725.7" y="284" width="32.1" height="14" fill="#ff5a03"/>
+<rect x="757.2" y="284" width="31.0" height="14" fill="#563d7c"/>
+<rect x="787.6" y="284" width="3.4" height="14" fill="#89e051"/>
 <rect x="790.4" y="284" width="5.6" height="14" fill="#3a3f49"/>
 </g>
 <circle cx="46" cy="318" r="6" fill="#7d8088"/>
-<text x="58" y="322" font-size="13" fill="#a6a7ab">MDX 35.7%</text>
+<text x="58" y="322" font-size="13" fill="#a6a7ab">MDX 35.3%</text>
 <circle cx="156" cy="318" r="6" fill="#3572A5"/>
-<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 30.9%</text>
+<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 31.7%</text>
 <circle cx="296" cy="318" r="6" fill="#3178c6"/>
-<text x="308" y="322" font-size="13" fill="#a6a7ab">TypeScript 24.0%</text>
+<text x="308" y="322" font-size="13" fill="#a6a7ab">TypeScript 23.7%</text>
 <circle cx="476" cy="318" r="6" fill="#ff5a03"/>
 <text x="488" y="322" font-size="13" fill="#a6a7ab">Astro 4.2%</text>
 <circle cx="596" cy="318" r="6" fill="#563d7c"/>
-<text x="608" y="322" font-size="13" fill="#a6a7ab">CSS 4.1%</text>
+<text x="608" y="322" font-size="13" fill="#a6a7ab">CSS 4.0%</text>
 <circle cx="696" cy="318" r="6" fill="#89e051"/>
 <text x="708" y="322" font-size="13" fill="#a6a7ab">Shell 0.4%</text>
 </svg>
