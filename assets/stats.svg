@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836 340" width="836" height="340" font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="GitHub stats">
 <rect x="8" y="8" width="820" height="324" rx="14" fill="#131418" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
-<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">1,614</text>
+<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">1,700</text>
 <text x="40" y="82" font-size="13" fill="#a6a7ab">коммитов всего · commits</text>
 <text x="292" y="60" font-size="34" font-weight="800" fill="#f3f3f1">~1.4M</text>
 <text x="292" y="82" font-size="13" fill="#a6a7ab">строк кода · lines of code</text>
-<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">287</text>
+<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">347</text>
 <text x="544" y="82" font-size="13" fill="#a6a7ab">за 30 дней · last 30 days</text>
-<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 1595 commits this year</text>
+<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 1681 commits this year</text>
 <text x="74" y="142" font-size="12" fill="#6b6d73">Oct</text>
 <text x="130" y="142" font-size="12" fill="#6b6d73">Nov</text>
 <text x="200" y="142" font-size="12" fill="#6b6d73">Dec</text>
@@ -383,34 +383,35 @@
 <rect x="788" y="150" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="788" y="164" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="788" y="178" width="11" height="11" rx="2" fill="#39414c"/>
-<rect x="788" y="192" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="788" y="192" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="788" y="206" width="11" height="11" rx="2" fill="#39414c"/>
-<rect x="788" y="220" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="788" y="220" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="788" y="234" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="802" y="150" width="11" height="11" rx="2" fill="#39414c"/>
-<rect x="802" y="164" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="802" y="164" width="11" height="11" rx="2" fill="#98a1ad"/>
 <rect x="802" y="178" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="802" y="192" width="11" height="11" rx="2" fill="#39414c"/>
 <text x="40" y="272" font-size="13" fill="#a6a7ab">языки · most used languages</text>
 <clipPath id="lc"><rect x="40" y="284" width="756" height="14" rx="7"/></clipPath>
 <g clip-path="url(#lc)">
-<rect x="40.0" y="284" width="501.3" height="14" fill="#7d8088"/>
-<rect x="540.7" y="284" width="132.3" height="14" fill="#3572A5"/>
-<rect x="672.4" y="284" width="81.7" height="14" fill="#3178c6"/>
-<rect x="753.5" y="284" width="14.0" height="14" fill="#ff5a03"/>
-<rect x="766.8" y="284" width="13.3" height="14" fill="#563d7c"/>
-<rect x="779.5" y="284" width="9.2" height="14" fill="#7d8088"/>
-<rect x="788.1" y="284" width="7.9" height="14" fill="#3a3f49"/>
+<rect x="40.0" y="284" width="490.4" height="14" fill="#7d8088"/>
+<rect x="529.8" y="284" width="138.0" height="14" fill="#3572A5"/>
+<rect x="667.2" y="284" width="79.9" height="14" fill="#3178c6"/>
+<rect x="746.5" y="284" width="14.8" height="14" fill="#563d7c"/>
+<rect x="760.7" y="284" width="13.7" height="14" fill="#ff5a03"/>
+<rect x="773.8" y="284" width="10.6" height="14" fill="#f1e05a"/>
+<rect x="783.8" y="284" width="12.2" height="14" fill="#3a3f49"/>
 </g>
 <circle cx="46" cy="318" r="6" fill="#7d8088"/>
-<text x="58" y="322" font-size="13" fill="#a6a7ab">MDX 66.2%</text>
+<text x="58" y="322" font-size="13" fill="#a6a7ab">MDX 64.8%</text>
 <circle cx="156" cy="318" r="6" fill="#3572A5"/>
-<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 17.4%</text>
+<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 18.2%</text>
 <circle cx="296" cy="318" r="6" fill="#3178c6"/>
-<text x="308" y="322" font-size="13" fill="#a6a7ab">TypeScript 10.7%</text>
-<circle cx="476" cy="318" r="6" fill="#ff5a03"/>
-<text x="488" y="322" font-size="13" fill="#a6a7ab">Astro 1.8%</text>
-<circle cx="596" cy="318" r="6" fill="#563d7c"/>
-<text x="608" y="322" font-size="13" fill="#a6a7ab">CSS 1.7%</text>
-<circle cx="696" cy="318" r="6" fill="#7d8088"/>
-<text x="708" y="322" font-size="13" fill="#a6a7ab">QML 1.1%</text>
+<text x="308" y="322" font-size="13" fill="#a6a7ab">TypeScript 10.5%</text>
+<circle cx="476" cy="318" r="6" fill="#563d7c"/>
+<text x="488" y="322" font-size="13" fill="#a6a7ab">CSS 1.9%</text>
+<circle cx="576" cy="318" r="6" fill="#ff5a03"/>
+<text x="588" y="322" font-size="13" fill="#a6a7ab">Astro 1.7%</text>
+<circle cx="696" cy="318" r="6" fill="#f1e05a"/>
+<text x="708" y="322" font-size="13" fill="#a6a7ab">JavaScript 1.3%</text>
 </svg>
