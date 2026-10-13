@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836 340" width="836" height="340" font-family="Inter, Segoe UI, Arial, sans-serif" role="img" aria-label="GitHub stats">
 <rect x="8" y="8" width="820" height="324" rx="14" fill="#131418" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
-<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">1,742</text>
+<text x="40" y="60" font-size="34" font-weight="800" fill="#f3f3f1">1,748</text>
 <text x="40" y="82" font-size="13" fill="#a6a7ab">коммитов всего · commits</text>
 <text x="292" y="60" font-size="34" font-weight="800" fill="#f3f3f1">~1.4M</text>
 <text x="292" y="82" font-size="13" fill="#a6a7ab">строк кода · lines of code</text>
-<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">259</text>
+<text x="544" y="60" font-size="34" font-weight="800" fill="#f3f3f1">234</text>
 <text x="544" y="82" font-size="13" fill="#a6a7ab">за 30 дней · last 30 days</text>
-<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 1723 commits this year</text>
+<text x="40" y="122" font-size="13" fill="#a6a7ab">контрибуции за год · 1729 commits this year</text>
 <text x="74" y="142" font-size="12" fill="#6b6d73">Oct</text>
 <text x="116" y="142" font-size="12" fill="#6b6d73">Nov</text>
 <text x="186" y="142" font-size="12" fill="#6b6d73">Dec</text>
@@ -389,13 +389,14 @@
 <rect x="788" y="234" width="11" height="11" rx="2" fill="#39414c"/>
 <rect x="802" y="150" width="11" height="11" rx="2" fill="#5c6673"/>
 <rect x="802" y="164" width="11" height="11" rx="2" fill="#39414c"/>
+<rect x="802" y="178" width="11" height="11" rx="2" fill="#1b1d24"/>
 <text x="40" y="272" font-size="13" fill="#a6a7ab">языки · most used languages</text>
 <clipPath id="lc"><rect x="40" y="284" width="756" height="14" rx="7"/></clipPath>
 <g clip-path="url(#lc)">
-<rect x="40.0" y="284" width="486.9" height="14" fill="#7d8088"/>
-<rect x="526.3" y="284" width="139.2" height="14" fill="#3572A5"/>
-<rect x="664.9" y="284" width="82.0" height="14" fill="#3178c6"/>
-<rect x="746.3" y="284" width="14.7" height="14" fill="#563d7c"/>
+<rect x="40.0" y="284" width="486.6" height="14" fill="#7d8088"/>
+<rect x="526.0" y="284" width="139.3" height="14" fill="#3572A5"/>
+<rect x="664.7" y="284" width="82.3" height="14" fill="#3178c6"/>
+<rect x="746.4" y="284" width="14.7" height="14" fill="#563d7c"/>
 <rect x="760.5" y="284" width="13.6" height="14" fill="#ff5a03"/>
 <rect x="773.5" y="284" width="10.8" height="14" fill="#f1e05a"/>
 <rect x="783.7" y="284" width="12.3" height="14" fill="#3a3f49"/>
@@ -403,7 +404,7 @@
 <circle cx="46" cy="318" r="6" fill="#7d8088"/>
 <text x="58" y="322" font-size="13" fill="#a6a7ab">MDX 64.3%</text>
 <circle cx="156" cy="318" r="6" fill="#3572A5"/>
-<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 18.3%</text>
+<text x="168" y="322" font-size="13" fill="#a6a7ab">Python 18.4%</text>
 <circle cx="296" cy="318" r="6" fill="#3178c6"/>
 <text x="308" y="322" font-size="13" fill="#a6a7ab">TypeScript 10.8%</text>
 <circle cx="476" cy="318" r="6" fill="#563d7c"/>
